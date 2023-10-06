@@ -14,23 +14,24 @@ app.get('/bienvenida', (req, res) => {
 });
 
 
-app.get('/productos/:id', (req, res) => {
+app.get('/:id', (req, res) => {
     const producId = Number(req.params.id);
     const produc = products.find(p => p.id === producId);
     if (!produc) return res.send({ error: 'producto no encontrado' });
     res.send(produc);
 });
 
-app.get('/productosquery', (req, res) => {
-    const queryParams = req.query;
-    res.send(queryParams);
-});
 
-app.get('/productos', (req, res) => {
-    const producto = req.query.description;
-    if(!description||(description!=='fruta'&&description!=='golosina'&&description!=='abarrotes')) return res.send({products});
-    const filteredproduc = products.filter(produc=>produc.description===description);
-    res.send({productos: filteredproduc});
-});
+// app.get('/productosquery', (req, res) => {
+//     const queryParams = req.query;
+//     res.send(queryParams);
+// });
+
+// app.get('/productos', (req, res) => {
+//     const producto = req.query.description;
+//     if(!description||(description!=='fruta'&&description!=='golosina'&&description!=='abarrotes')) return res.send({products});
+//     const filteredproduc = products.filter(produc=>produc.description===description);
+//     res.send({productos: filteredproduc});
+// });
 
 app.listen(8080, () => console.log('Listening on port 8080'));

@@ -78,18 +78,6 @@ export default class ProductManager {
         }
     };
 
-    // updateProduct = async (id,updateprod) => {
-    //     const products = await this.getProduct();
-    //     const productindex = this.products.findIndex((product) => product.id === id)
-    //     if (productindex === -1){
-    //         throw new error("producto no encontrado para actualizar")
-    //     }
-    //     const updateProduct= {...this.product[productindex], ...updateprod};
-    //     this.products[productindex] = updateProduct;
-    //     await fs.promises.writeFile(this.path, JSON.stringify(products, null, '\t'));
-
-    //     return updateProduct
-    // }
 
     updateProduct = async (id,updateprod) => {
         try {

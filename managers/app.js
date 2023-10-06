@@ -9,13 +9,13 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.get('/products', async (req, res) => {
-    const products = await productManager.getAll();
+    const products = await productManager.getProduct();
     res.send(products);
 })
 
 
 app.get('/', async (req,res)=> {
-    const products = await productManager.getAll();
+    const products = await productManager.getProduct();
     res.send({products});
 })
 
